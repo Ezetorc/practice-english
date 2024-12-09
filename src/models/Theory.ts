@@ -1,5 +1,6 @@
 export interface Theory {
   explanation: string
+  path: string
   sentences: {
     affirmative: {
       structure: string

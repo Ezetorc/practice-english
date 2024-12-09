@@ -3,9 +3,10 @@ import { useEffect, useState } from 'react'
 interface TitleProps {
   main: string[] | string
   sub: string
+  className?: string
 }
 
-export function Title ({ main, sub }: TitleProps) {
+export function Title ({ main, sub, className }: TitleProps) {
   const [index, setIndex] = useState<number>(0)
   const [isLeaving, setIsLeaving] = useState<boolean>(false)
   const isAnimated: boolean = typeof main !== 'string'
@@ -25,7 +26,7 @@ export function Title ({ main, sub }: TitleProps) {
   }, [main.length, time, isAnimated])
 
   return (
-    <div className='w-full h-fit flex flex-col justify-center pl-[5%]'>
+    <div className={`w-full h-fit flex flex-col justify-center ${className}`}>
       <h2
         className={`text-selective-yellow text-[clamp(40px,11vw,140px)] text-pretty
           ${isLeaving && isAnimated ? 'animate-leave' : 'animate-enter'}`}

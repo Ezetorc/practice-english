@@ -5,8 +5,8 @@ export const themes: Theme[] = [
     title: 'Present Simple',
     description:
       'To talk about things that happen regularly, facts, general truths, or things that are always true.',
-    path: '/present-simple',
     theory: {
+      path: '/present-simple/theory',
       explanation:
         'The Present Simple is used for actions that are habitual, general truths, or things that are always true.',
       sentences: {
@@ -29,7 +29,8 @@ export const themes: Theme[] = [
           ]
         },
         interrogative: {
-          structure: 'Do/Does + Subject + Base Verb + (rest of the sentence) + ?',
+          structure:
+            'Do/Does + Subject + Base Verb + (rest of the sentence) + ?',
           examples: [
             'Do you play football every weekend?',
             'Does she work at a bank?',
@@ -39,6 +40,13 @@ export const themes: Theme[] = [
       },
       usageNotes:
         'The Present Simple is often used with adverbs of frequency like "always", "usually", "never".'
+    },
+    exercises: {
+      path: '/present-simple/exercises',
+      exercises: [
+        'If Paul [sells] (sell) his house, he [will earn] (earn) a lot of money.',
+        "If John [gets] (get) a job, he [won't be] (be) poor anymore."
+      ]
     }
   }
 
