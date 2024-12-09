@@ -1,4 +1,1 @@
-export interface Exercises {
-  path: string
-  exercises: string[]
-}
+export type Exercises = string[]

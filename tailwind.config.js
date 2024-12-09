@@ -14,7 +14,9 @@ export default {
         persimmon: '#F35B04',
         affirmative: '#caf7b2',
         negative: '#ffb8b8',
-        interrogative: '#b8d1ff'
+        interrogative: '#b8d1ff',
+        correct: '#33cc33',
+        incorrect: '#ff1a1a'
       },
       fontFamily: {
         'roboto-bold': 'roboto-bold',
@@ -22,7 +24,8 @@ export default {
       },
       animation: {
         enter: 'enter 0.4s forwards',
-        leave: 'leave 0.4s forwards'
+        leave: 'leave 0.4s forwards',
+        shake: 'shake 0.4s forwards'
       },
       keyframes: {
         enter: {
@@ -39,6 +42,20 @@ export default {
           },
           '100%': {
             transform: 'translateX(100%)'
+          }
+        },
+        shake: {
+          '0%': {
+            transform: 'translateX(0)'
+          },
+          '25%': {
+            transform: 'translateX(-13px)'
+          },
+          '50%': {
+            transform: 'translateX(10px)'
+          },
+          '100%': {
+            transform: 'translateX(0)'
           }
         }
       },

@@ -1,9 +1,10 @@
-import { Exercises } from './Exercises'
-import { Theory } from './Theory'
+import { ThemeId } from './ThemeId'
 
 export interface Theme {
-  title: string
-  description: string
-  theory: Theory
-  exercises: Exercises
+  id: ThemeId
+  paths: {
+    theory: string
+    exercises: string
+    completed: string
+  }
 }

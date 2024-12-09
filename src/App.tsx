@@ -15,20 +15,20 @@ function App () {
         <Header />
         <Routes>
           <Route path='/' element={<Home />} />
-          {themes.map(theme => (
-            <React.Fragment key={theme.title}>
+          {themes.map((theme, index) => (
+            <React.Fragment key={index}>
               <Route
-                path={theme.theory.path}
+                path={theme.paths.theory}
                 element={<TheoryDisplay theme={theme} />}
               />
 
               <Route
-                path={theme.exercises.path}
+                path={theme.paths.exercises}
                 element={<ExercisesDisplay theme={theme} />}
               />
 
               <Route
-                path={`/completed/${theme.title}`}
+                path={theme.paths.completed}
                 element={<Completed theme={theme} />}
               />
             </React.Fragment>
