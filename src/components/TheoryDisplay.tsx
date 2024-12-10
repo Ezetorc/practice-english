@@ -69,10 +69,10 @@ export default function TheoryDisplay ({ theme }: ThemeComponentProp) {
 
       <footer>
         <Link
-          to={theme.paths.exercises}
+          to={`${theme.path}/exercises`}
           className='bg-medium-slate-blue w-full text-center block h-[100px] content-center rounded-[13px] text-[clamp(20px,7vw,40px)] shadow-bottom xl:hover:translate-y-[-10px] xl:transition-transform my-[5%]'
         >
-          Exercises
+          {dictionary.exercises}
         </Link>
       </footer>
     </section>

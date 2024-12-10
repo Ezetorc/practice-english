@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 interface TitleProps {
   main: string[] | string
-  sub: string
+  sub?: string
   className?: string
 }
 
@@ -28,13 +28,13 @@ export function Title ({ main, sub, className }: TitleProps) {
   return (
     <div className={`w-full h-fit flex flex-col justify-center ${className}`}>
       <h2
-        className={`text-selective-yellow text-[clamp(40px,11vw,140px)] text-pretty
+        className={`text-selective-yellow text-[clamp(40px,11vw,120px)] text-pretty
           ${isLeaving && isAnimated ? 'animate-leave' : 'animate-enter'}`}
         key={main[index]}
       >
         {isAnimated ? main[index] : main}
       </h2>
-      <h3 className='text-white text-[clamp(40px,10vw,130px)] mt-[-4%]'>
+      <h3 className='text-white text-[clamp(40px,10vw,110px)] mt-[-2%]'>
         {sub}
       </h3>
     </div>

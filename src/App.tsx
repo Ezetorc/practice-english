@@ -8,6 +8,10 @@ import ExercisesDisplay from './components/ExercisesDisplay'
 import React from 'react'
 import Completed from './components/Completed'
 
+const LazyVerbsListDisplay = React.lazy(
+  () => import('./components/VerbsListDisplay.tsx')
+)
+
 function App () {
   return (
     <Suspense fallback={<span>Loading...</span>}>
@@ -15,20 +19,21 @@ function App () {
         <Header />
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/verbs-list' element={<LazyVerbsListDisplay />} />
           {themes.map((theme, index) => (
             <React.Fragment key={index}>
               <Route
-                path={theme.paths.theory}
+                path={`${theme.path}/theory`}
                 element={<TheoryDisplay theme={theme} />}
               />
 
               <Route
-                path={theme.paths.exercises}
+                path={`${theme.path}/exercises`}
                 element={<ExercisesDisplay theme={theme} />}
               />
 
               <Route
-                path={theme.paths.completed}
+                path={`${theme.path}/completed`}
                 element={<Completed theme={theme} />}
               />
             </React.Fragment>

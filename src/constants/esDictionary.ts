@@ -4,12 +4,21 @@ export const esDictionary: Dictionary = {
   checkAnswer: 'Comprobar respuesta',
   exercises: 'Ejercicios',
   home: 'Inicio',
-  theory: "Teoría",
+  theory: 'Teoría',
   completed: 'Completado',
   next: 'Siguiente',
-  affirmative: "Afirmativa",
-  negative: "Negativa",
-  interrogative: "Interrogativa",
+  languages: 'Idiomas',
+  verbsList: 'Lista de verbos',
+  affirmative: 'Afirmativa',
+  negative: 'Negativa',
+  infinite: 'Infinitivo',
+  pastParticiple: 'Pasado Participio',
+  pastSimple: 'Pasado Simple',
+  interrogative: 'Interrogativa',
+  improve: 'Mejorá',
+  practice: 'Practicá',
+  yourEnglish: 'Tu Inglés',
+  boost: 'Superá',
   structures: 'Estructuras',
   explanation: 'Explicación',
   usageNotes: 'Notas de uso',
@@ -53,6 +62,46 @@ export const esDictionary: Dictionary = {
         },
         usageNotes:
           'El Presente Simple se usa a menudo con adverbios de frecuencia como "always", "usually", "never".'
+      }
+    },
+    presentContinuous: {
+      title: 'Presente Continuo',
+      description:
+        'Para hablar de acciones que están ocurriendo en el momento actual o situaciones temporales.',
+      theory: {
+        explanation:
+          'El Presente Continuo se usa para describir acciones que están sucediendo en este momento, situaciones temporales o acciones en progreso.',
+        sentences: {
+          affirmative: {
+            structure:
+              'Sujeto + am/are/is + Verbo con -ing + (resto de la oración)',
+            examples: [
+              'I am playing football right now.',
+              'She is working at the moment.',
+              'They are studying English this week.'
+            ]
+          },
+          negative: {
+            structure:
+              'Sujeto + am/are/is + not + Verbo con -ing + (resto de la oración)',
+            examples: [
+              'I am not playing football right now.',
+              'She is not working at the moment.',
+              'They are not studying English this week.'
+            ]
+          },
+          interrogative: {
+            structure:
+              'Am/Are/Is + Sujeto + Verbo con -ing + (resto de la oración) + ?',
+            examples: [
+              'Am I playing football right now?',
+              'Is she working at the moment?',
+              'Are they studying English this week?'
+            ]
+          }
+        },
+        usageNotes:
+          'El Presente Continuo se usa a menudo con expresiones de tiempo como "right now", "at the moment", "currently", o "this week".'
       }
     }
   }

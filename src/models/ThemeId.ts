@@ -1,1 +1,1 @@
-export type ThemeId = 'presentSimple'
+export type ThemeId = 'presentSimple' | 'presentContinuous'

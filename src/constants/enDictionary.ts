@@ -1,16 +1,25 @@
-import { Dictionary } from "../models/Dictionary";
+import { Dictionary } from '../models/Dictionary'
 
 export const enDictionary: Dictionary = {
   checkAnswer: 'Check answer',
   exercises: 'Exercises',
   home: 'Home',
-  theory: "Theory",
+  theory: 'Theory',
   completed: 'Completed',
   next: 'Next',
-  affirmative: "Affirmative",
-  negative: "Negative",
-  interrogative: "Interrogative",
+  languages: 'Languages',
+  affirmative: 'Affirmative',
+  negative: 'Negative',
+  interrogative: 'Interrogative',
   structures: 'Structures',
+  improve: 'Improve',
+  infinite: 'Infinitive',
+  pastParticiple: 'Past Participle',
+  pastSimple: 'Past Simple',
+  practice: 'Practice',
+  boost: 'Boost',
+  verbsList: 'Verbs list',
+  yourEnglish: 'Your English',
   explanation: 'Explanation',
   usageNotes: 'Usage notes',
   goBackToTheory: 'Go back to theory (Lose progress)',
@@ -53,6 +62,46 @@ export const enDictionary: Dictionary = {
         },
         usageNotes:
           'The Present Simple is often used with adverbs of frequency like "always", "usually", "never".'
+      }
+    },
+    presentContinuous: {
+      title: 'Present Continuous',
+      description:
+        'To talk about things happening now or temporary situations.',
+      theory: {
+        explanation:
+          'The Present Continuous is used for actions happening right now or temporary situations.',
+        sentences: {
+          affirmative: {
+            structure:
+              'Subject + am/are/is + Verb with -ing + (rest of the sentence)',
+            examples: [
+              'I am playing football right now.',
+              'She is working at the moment.',
+              'They are studying English this week.'
+            ]
+          },
+          negative: {
+            structure:
+              'Subject + am/are/is + not + Verb with -ing + (rest of the sentence)',
+            examples: [
+              'I am not playing football right now.',
+              'She is not working at the moment.',
+              'They are not studying English this week.'
+            ]
+          },
+          interrogative: {
+            structure:
+              'Am/Are/Is + Subject + Verb with -ing + (rest of the sentence) + ?',
+            examples: [
+              'Am I playing football right now?',
+              'Is she working at the moment?',
+              'Are they studying English this week?'
+            ]
+          }
+        },
+        usageNotes:
+          'The Present Continuous often uses time words like "now", "at the moment", or "today".'
       }
     }
   }

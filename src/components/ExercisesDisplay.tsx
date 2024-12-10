@@ -24,8 +24,15 @@ export default function ExercisesDisplay ({ theme }: ThemeComponentProp) {
     return getParsedExercise(exercises[theme.id][index])
   }
 
+  useEffect(() => {
+    if (inputs.current.length > 0) {
+      inputs.current[0].focus()
+    }
+  }, [index])
+  
+
   const goToTheory = (): void => {
-    navigate(theme.paths.theory)
+    navigate(`${theme.path}/theory`)
   }
 
   const passExercise = useCallback((): void => {
@@ -35,7 +42,7 @@ export default function ExercisesDisplay ({ theme }: ThemeComponentProp) {
     if (!isLastExercise(index, theme)) {
       setIndex(prevIndex => prevIndex + 1)
     } else {
-      navigate(theme.paths.completed)
+      navigate(`${theme.path}/completed`)
     }
   }, [index, navigate, theme])
 
@@ -50,6 +57,7 @@ export default function ExercisesDisplay ({ theme }: ThemeComponentProp) {
   const checkExercise = useCallback((): void => {
     const checks: boolean[] = inputs.current.map((input, index) => {
       if (answers[index] === undefined || answers[index] === null) return false
+
       const result: boolean = answers[index].includes(input.value)
       updateInputColors(input, result)
       return result
@@ -90,7 +98,9 @@ export default function ExercisesDisplay ({ theme }: ThemeComponentProp) {
     <section className='w-full h-[90dvh] bg-persimmon flex flex-col justify-evenly px-[5%]'>
       <Title
         main={dictionary.themes[theme.id].title}
-        sub={`${dictionary.exercises} ${index + 1}/${exercises[theme.id].length}`}
+        sub={`${dictionary.exercises} ${index + 1}/${
+          exercises[theme.id].length
+        }`}
       />
 
       <div
@@ -105,8 +115,6 @@ export default function ExercisesDisplay ({ theme }: ThemeComponentProp) {
           if (Array.isArray(part)) {
             return <ExerciseInput key={index} ref={addToRefs} />
           }
-
-          return null
         })}
       </div>
 
