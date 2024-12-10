@@ -9,10 +9,9 @@ import { isLastExercise } from '../utilities/isLastExercise'
 import { updateInputColors } from '../utilities/updateInputColors'
 import { getParsedExerciseAnswers } from '../utilities/getParsedExerciseAnswers'
 import { useLanguage } from '../hooks/useLanguage'
-import { exercises } from '../constants/exercises'
 
 export default function ExercisesDisplay ({ theme }: ThemeComponentProp) {
-  const { dictionary } = useLanguage()
+  const { dictionary, getLanguage } = useLanguage()
   const navigate = useNavigate()
   const [index, setIndex] = useState<number>(0)
   const inputs = useRef<HTMLInputElement[]>([])
@@ -21,7 +20,7 @@ export default function ExercisesDisplay ({ theme }: ThemeComponentProp) {
   const answers: string[][] = getParsedExerciseAnswers(getExercise())
 
   function getExercise (): (string | string[])[] {
-    return getParsedExercise(exercises[theme.id][index])
+    return getParsedExercise(theme.exercises[index])
   }
 
   useEffect(() => {
@@ -97,9 +96,9 @@ export default function ExercisesDisplay ({ theme }: ThemeComponentProp) {
   return (
     <section className='w-full h-[90dvh] bg-persimmon flex flex-col justify-evenly px-[5%]'>
       <Title
-        main={dictionary.themes[theme.id].title}
+        main={theme[getLanguage()].title}
         sub={`${dictionary.exercises} ${index + 1}/${
-          exercises[theme.id].length
+          theme.exercises.length
         }`}
       />
 

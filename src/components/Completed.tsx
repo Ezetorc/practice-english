@@ -4,12 +4,12 @@ import { Title } from './Title'
 import { useLanguage } from '../hooks/useLanguage'
 
 export default function Completed ({ theme }: ThemeComponentProp) {
-  const { dictionary } = useLanguage()
+  const { dictionary, getLanguage } = useLanguage()
 
   return (
     <section className='w-full min-h-[90vh] bg-persimmon flex flex-col px-[5%]'>
       <Title
-        main={`${dictionary.themes[theme.id].title} ${dictionary.exercises}`}
+        main={`${theme[getLanguage()].title} ${dictionary.exercises}`}
         sub={dictionary.completed}
       />
 

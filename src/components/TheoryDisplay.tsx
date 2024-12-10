@@ -6,7 +6,8 @@ import { useLanguage } from '../hooks/useLanguage'
 import { SentenceType } from '../models/SentenceType'
 
 export default function TheoryDisplay ({ theme }: ThemeComponentProp) {
-  const { dictionary } = useLanguage()
+  const { dictionary, getLanguage } = useLanguage()
+  const { theory } = theme[getLanguage()]
 
   const getSentenceType = (key: SentenceType): string => {
     return dictionary[key]
@@ -14,7 +15,7 @@ export default function TheoryDisplay ({ theme }: ThemeComponentProp) {
 
   return (
     <section className='w-full min-h-[90vh] bg-persimmon flex flex-col px-[5%]'>
-      <Title main={dictionary.themes[theme.id].title} sub={dictionary.theory} />
+      <Title main={theme[getLanguage()].title} sub={dictionary.theory} />
 
       <article className='flex flex-col items-center w-[clamp(300px,70%,1000px)]'>
         <section>
@@ -22,7 +23,7 @@ export default function TheoryDisplay ({ theme }: ThemeComponentProp) {
             {dictionary.explanation}
           </h2>
           <p className='font-roboto-regular text-[clamp(20px,4vw,40px)]'>
-            {dictionary.themes[theme.id].theory.explanation}
+            {theory.explanation}
           </p>
         </section>
 
@@ -30,7 +31,7 @@ export default function TheoryDisplay ({ theme }: ThemeComponentProp) {
           <h2 className='font-roboto-bold text-[clamp(30px,5vw,60px)] underline'>
             {dictionary.structures}
           </h2>
-          {Object.entries(dictionary.themes[theme.id].theory.sentences).map(
+          {Object.entries(theory.sentences).map(
             ([key, sentence], sentenceIndex) => (
               <div key={sentenceIndex} className='my-[4%]'>
                 <span className='font-roboto-regular text-[clamp(20px,4vw,40px)]'>
@@ -62,7 +63,7 @@ export default function TheoryDisplay ({ theme }: ThemeComponentProp) {
             {dictionary.usageNotes}
           </h2>
           <p className='font-roboto-regular text-[clamp(20px,4vw,40px)]'>
-            {dictionary.themes[theme.id].theory.usageNotes}
+            {theory.usageNotes}
           </p>
         </section>
       </article>

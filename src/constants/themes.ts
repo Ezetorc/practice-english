@@ -1,16 +1,10 @@
 import { Theme } from '../models/Theme'
+import { presentContinuous } from './themes/presentContinuous'
+import { presentPerfectSimple } from './themes/presentPerfectSimple'
+import { presentSimple } from './themes/presentSimple'
 
 export const themes: Theme[] = [
-  {
-    id: 'presentSimple',
-    path: '/present-simple'
-  },
-  {
-    id: 'presentContinuous',
-    path: '/present-continuous'
-  },
-  {
-    id: 'presentPerfectSimple',
-    path: '/present-perfect-simple'
-  }
+  presentSimple,
+  presentContinuous,
+  presentPerfectSimple
 ]

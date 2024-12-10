@@ -1,6 +1,3 @@
-import { ThemeId } from './ThemeId'
-import { Theory } from './Theory'
-
 export interface Dictionary {
   checkAnswer: string
   exercises: string
@@ -24,11 +21,5 @@ export interface Dictionary {
   usageNotes: string
   explanation: string
   structures: string
-  themes: {
-    [key in ThemeId]: {
-      title: string
-      description: string
-      theory: Theory
-    }
-  }
+
 }
