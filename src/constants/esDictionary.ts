@@ -103,6 +103,46 @@ export const esDictionary: Dictionary = {
         usageNotes:
           'El Presente Continuo se usa a menudo con expresiones de tiempo como "right now", "at the moment", "currently", o "this week".'
       }
+    },
+    presentPerfectSimple: {
+      title: 'Presente Perfecto Simple',
+      description:
+        'Para hablar de acciones que ocurrieron en un momento no específico del pasado y tienen conexión con el presente.',
+      theory: {
+        explanation:
+          'El Presente Perfecto Simple se usa para acciones que empezaron en el pasado y continúan en el presente o tienen resultados en el presente.',
+        sentences: {
+          affirmative: {
+            structure:
+              'Sujeto + have/has + Verbo en pasado participio + (resto de la oración)',
+            examples: [
+              'I have finished my homework.',
+              'She has traveled to Spain.',
+              'They have seen that movie.'
+            ]
+          },
+          negative: {
+            structure:
+              'Sujeto + have/has + not + Verbo en pasado participio + (resto de la oración)',
+            examples: [
+              'I have not finished my homework.',
+              'She has not traveled to Spain.',
+              'They have not seen that movie.'
+            ]
+          },
+          interrogative: {
+            structure:
+              'Have/Has + Sujeto + Verbo en pasado participio + (resto de la oración) + ?',
+            examples: [
+              'Have you finished your homework?',
+              'Has she traveled to Spain?',
+              'Have they seen that movie?'
+            ]
+          }
+        },
+        usageNotes:
+          'El Presente Perfecto Simple se usa a menudo con palabras como "ya", "todavía", "nunca" y "alguna vez".'
+      }
     }
   }
 }

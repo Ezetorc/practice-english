@@ -103,6 +103,46 @@ export const enDictionary: Dictionary = {
         usageNotes:
           'The Present Continuous often uses time words like "now", "at the moment", or "today".'
       }
+    },
+    presentPerfectSimple: {
+      title: 'Present Perfect Simple',
+      description:
+        'To talk about actions that happened at an unspecified time in the past and have a connection to the present.',
+      theory: {
+        explanation:
+          'The Present Perfect Simple is used for actions that started in the past and continue to the present or have results in the present.',
+        sentences: {
+          affirmative: {
+            structure:
+              'Subject + have/has + past participle + (rest of the sentence)',
+            examples: [
+              'I have finished my homework.',
+              'She has traveled to Spain.',
+              'They have seen that movie.'
+            ]
+          },
+          negative: {
+            structure:
+              'Subject + have/has + not + past participle + (rest of the sentence)',
+            examples: [
+              'I have not finished my homework.',
+              'She has not traveled to Spain.',
+              'They have not seen that movie.'
+            ]
+          },
+          interrogative: {
+            structure:
+              'Have/Has + subject + past participle + (rest of the sentence) + ?',
+            examples: [
+              'Have you finished your homework?',
+              'Has she traveled to Spain?',
+              'Have they seen that movie?'
+            ]
+          }
+        },
+        usageNotes:
+          'The Present Perfect Simple is often used with words like "just", "already", "yet", "ever", and "never".'
+      }
     }
   }
 }

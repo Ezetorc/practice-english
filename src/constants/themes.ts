@@ -8,5 +8,9 @@ export const themes: Theme[] = [
   {
     id: 'presentContinuous',
     path: '/present-continuous'
+  },
+  {
+    id: 'presentPerfectSimple',
+    path: '/present-perfect-simple'
   }
 ]
