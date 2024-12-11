@@ -37,7 +37,7 @@ export default function TheoryDisplay ({ theme }: ThemeComponentProp) {
                 <span className='font-roboto-regular text-[clamp(20px,4vw,40px)]'>
                   <b
                     className={`font-roboto-bold drop-shadow-[0_1.2px_0.2px_#FFFFFFcc] ${getSentenceClass(
-                      key
+                      key as SentenceType
                     )}`}
                   >{`${getSentenceType(key as SentenceType)}: `}</b>
                   {`${sentence.structure}`}

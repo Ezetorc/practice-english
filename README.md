@@ -1,7 +1,7 @@
-# Practice English
-## Theory & Exercises
+# Practice English - Theory & Exercises
 
-# Themes
+The page includes:
+- Verbs list
 - Present Simple
 - Present Continous
 - Present Perfect Simple
@@ -19,7 +19,6 @@
 - First Conditional
 - Second Conditional
 - Third Conditional
-
 - Reported Speech
 - Relative Clauses
 - Used to

@@ -15,7 +15,7 @@ export function Header () {
       <div className='w-full h-[10vh]'>
         <Link
           to='/'
-          className='flex flex-col justify-center items-center w-fit h-full text-[clamp(10px,5vw,30px)] xl:hover:text-selective-yellow md:hover:text-selective-yellow pl-[clamp(20px,5%,60px)]' 
+          className='flex flex-col justify-center items-center w-fit h-full text-[clamp(10px,5vw,30px)] xl:hover:text-selective-yellow md:hover:text-selective-yellow pl-[clamp(20px,5%,60px)]'
         >
           <span>Practice</span>
           <span>English.</span>
