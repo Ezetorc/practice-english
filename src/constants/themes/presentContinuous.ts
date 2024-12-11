@@ -1,4 +1,6 @@
-export const presentContinuous = {
+import { Theme } from "../../models/Theme";
+
+export const presentContinuous: Theme = {
   path: '/present-continuous',
   exercises: [
     "I [am doing/'m doing/m doing] (do) my homework now.",

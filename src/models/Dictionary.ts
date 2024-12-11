@@ -21,5 +21,6 @@ export interface Dictionary {
   usageNotes: string
   explanation: string
   structures: string
-
+  defining: string
+  nonDefining: string
 }

@@ -1,5 +1,7 @@
-export const presentPerfectSimple = {
-  path: 'present-perfect-simple',
+import { Theme } from "../../models/Theme";
+
+export const presentPerfectSimple: Theme = {
+  path: '/present-perfect-simple',
   exercises: [
     "We [have played/ve played/'ve played] (play) football on the ground.",
     "He [has written/'s written/s written] (write) a letter to his friend.",

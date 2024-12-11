@@ -1,15 +1,7 @@
 export interface Theory {
   explanation: string
   sentences: {
-    affirmative: {
-      structure: string
-      examples: string[]
-    }
-    negative: {
-      structure: string
-      examples: string[]
-    }
-    interrogative: {
+    [key: string]: {
       structure: string
       examples: string[]
     }

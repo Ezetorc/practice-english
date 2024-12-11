@@ -8,7 +8,7 @@ interface ThemeTexts {
 }
 
 export interface Theme {
-  path: string
+  path: `/${string}`
   exercises: Exercises
   es: ThemeTexts
   en: ThemeTexts

@@ -24,7 +24,9 @@ export const dictionaries: { [key in Language]: Dictionary } = {
     yourEnglish: 'Your English',
     explanation: 'Explanation',
     usageNotes: 'Usage notes',
-    goBackToTheory: 'Go back to theory (Lose progress)'
+    goBackToTheory: 'Go back to theory (Lose progress)',
+    defining: 'Defining',
+    nonDefining: 'Non Defining'
   },
   es: {
     checkAnswer: 'Comprobar respuesta',
@@ -48,6 +50,8 @@ export const dictionaries: { [key in Language]: Dictionary } = {
     structures: 'Estructuras',
     explanation: 'Explicación',
     usageNotes: 'Notas de uso',
-    goBackToTheory: 'Volver a la teoría (Pierde el progreso)'
+    goBackToTheory: 'Volver a la teoría (Pierde el progreso)',
+    defining: 'Especificativas',
+    nonDefining: 'Explicativas'
   }
 }

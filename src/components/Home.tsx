@@ -14,7 +14,7 @@ export default function Home () {
         className='pl-[5%] mt-[5%]'
       />
 
-      <section className='w-full h-auto grid grid-cols-1 md:grid-cols-2 gap-10 p-[2%] place-items-center'>
+      <section className='w-full h-auto grid grid-cols-1 md:grid-cols-3 gap-10 p-[2%] place-items-center'>
         {themes.map(theme => (
           <ThemeLink theme={theme} key={`${theme.path}/theory`} />
         ))}
