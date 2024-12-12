@@ -9,6 +9,7 @@ export interface Dictionary {
   next: string
   yourEnglish: string
   improve: string
+  loseProgressAdvice: string
   practice: string
   boost: string
   infinite: string

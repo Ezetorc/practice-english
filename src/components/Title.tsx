@@ -14,19 +14,21 @@ export function Title ({ main, sub, className }: TitleProps) {
 
   useEffect(() => {
     if (!isAnimated) return
+
     const interval: NodeJS.Timeout = setInterval(() => {
       setIsLeaving(true)
+
       setTimeout(() => {
         setIndex(prevIndex => (prevIndex + 1) % main.length)
         setIsLeaving(false)
-      }, 100)
+      }, 300)
     }, time)
 
     return () => clearInterval(interval)
   }, [main.length, time, isAnimated])
 
   return (
-    <div className={`w-full h-fit flex flex-col justify-center ${className}`}>
+    <div className={`w-full h-fit flex flex-col justify-center overflow-hidden ${className}`}>
       <h2
         className={`text-selective-yellow text-[clamp(40px,11vw,120px)] text-pretty
           ${isLeaving && isAnimated ? 'animate-leave' : 'animate-enter'}`}

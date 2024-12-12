@@ -60,7 +60,8 @@ export default {
         }
       },
       boxShadow: {
-        bottom: '0px 6px 15px #0005'
+        bottom: '0px 6px 15px #0005',
+        top: '6px 0px 15px #0005'
       }
     }
   },

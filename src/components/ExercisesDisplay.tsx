@@ -9,9 +9,16 @@ import { isLastExercise } from '../utilities/isLastExercise'
 import { updateInputColors } from '../utilities/updateInputColors'
 import { getParsedExerciseAnswers } from '../utilities/getParsedExerciseAnswers'
 import { useLanguage } from '../hooks/useLanguage'
+import { Modal } from './Modal'
+import { isExercisesPage } from '../utilities/isExercisesPage'
 
 export default function ExercisesDisplay ({ theme }: ThemeComponentProp) {
-  const { dictionary, getLanguage } = useLanguage()
+  const {
+    dictionary,
+    getLanguage,
+    setIsLoseProgressModalOpen,
+    isLoseProgressModalOpen
+  } = useLanguage()
   const navigate = useNavigate()
   const [index, setIndex] = useState<number>(0)
   const inputs = useRef<HTMLInputElement[]>([])
@@ -28,7 +35,6 @@ export default function ExercisesDisplay ({ theme }: ThemeComponentProp) {
       inputs.current[0].focus()
     }
   }, [index])
-  
 
   const goToTheory = (): void => {
     navigate(`${theme.path}/theory`)
@@ -93,14 +99,52 @@ export default function ExercisesDisplay ({ theme }: ThemeComponentProp) {
     }
   }, [exerciseCompleted, index, checkExercise, passExercise])
 
+  const leavePage = (): void => {
+    goToTheory()
+    setIsLoseProgressModalOpen(false)
+  }
+
+  const handleClick = (): void => {
+    if (isExercisesPage()) {
+      setIsLoseProgressModalOpen(true)
+    } else {
+      goToTheory()
+    }
+  }
+
   return (
     <section className='w-full h-[90dvh] bg-persimmon flex flex-col justify-evenly px-[5%]'>
       <Title
         main={theme[getLanguage()].title}
-        sub={`${dictionary.exercises} ${index + 1}/${
-          theme.exercises.length
-        }`}
+        sub={`${dictionary.exercises} ${index + 1}/${theme.exercises.length}`}
       />
+
+<Modal
+        isOpen={isLoseProgressModalOpen}
+        title='Warning!'
+        onClose={() => setIsLoseProgressModalOpen(false)}
+      >
+        <div className='flex flex-col justify-between w-full gap-[20px]'>
+          <p className='text-[clamp(10px,5vw,30px)]'>
+            {dictionary.loseProgressAdvice}
+          </p>
+
+          <div className='flex gap-[5%]'>
+            <button
+              className='bg-persimmon p-[4%] rounded-[13px] xl:hover:bg-white xl:hover:text-persimmon text-[clamp(20px,4vw,25px)]'
+              onClick={() => leavePage()}
+            >
+              Leave
+            </button>
+            <button
+              className='text-persimmon p-[4%] rounded-[13px] xl:hover:bg-white xl:hover:text-persimmon text-[clamp(20px,4vw,25px)]'
+              onClick={() => setIsLoseProgressModalOpen(false)}
+            >
+              Stay
+            </button>
+          </div>
+        </div>
+      </Modal>
 
       <div
         className='text-[clamp(20px,5vw,40px)] w-[clamp(300px,100%,1000px)]'
@@ -136,7 +180,7 @@ export default function ExercisesDisplay ({ theme }: ThemeComponentProp) {
 
         <button
           className='bg-selective-yellow w-full text-center block h-[100px] content-center rounded-[13px] text-[clamp(20px,7vw,40px)] shadow-bottom xl:hover:translate-y-[-10px] xl:transition-transform'
-          onClick={goToTheory}
+          onClick={handleClick}
         >
           {dictionary.goBackToTheory}
         </button>

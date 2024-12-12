@@ -6,7 +6,7 @@
   font-family: roboto-bold;
   line-height: 1.5;
   font-weight: 400;
-  color: #fff;
+  color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -42,5 +42,21 @@ body {
 
 #root {
   width: 100%;
-  height: 100%;
+  height: 100;
+}
+
+@media (max-width: 1000px) and (orientation: landscape) {
+  .content {
+    display: none;
+  }
+
+  .viewport-advice {
+    display: flex;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
